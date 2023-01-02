@@ -1,3 +1,3 @@
 # streamlit
 
-https://happyfinal-streamlit-main-h2xaeu.streamlit.app/
+https://happyfinal-project-streamlitmain-2yd1rs.streamlit.app/
