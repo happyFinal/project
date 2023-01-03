@@ -52,14 +52,18 @@
 
 ## ✅ 데이터셋
 
-1️⃣ 텍스트 전처리
+1️⃣ 웹 크롤링
+
+
+
+2️⃣ 텍스트 전처리
 
 - 크롤링한 데이터를 .csv 확장자로 저장한 후, 개행문자 '\n'을 포함하지 않은 데이터를 제거하였다.
 - 데이터에 한글, 숫자, 개행문자만을 남겼는데, 숫자를 남긴 이유는 '1번', '3일' 등의 단어를 한글 수사로 매핑하지 않고 바로 사용하기 위해서이다.
 - 공백이 2회 이상 반복될 경우에도 제거해주고, 전처리 후 빈 행이나 10자 이상 안 되는 행 또한 제거하였다.
 - 전처리 완료 후에는 인덱스를 초기화해주고, 개행 문자를 기준으로 리스트로 만들어 활용하거나 split하여 .txt 확장자 파일로 만들어 모델을 학습시켰다.
 
-2️⃣ 음악 장르별 EDA (Exploratory Data Analysis)
+3️⃣ 음악 장르별 EDA (Exploratory Data Analysis)
 
 - 힙합, 댄스, RNB 장르는 영어의 비율이 높게 나타났다. → 토큰화 과정에서 KonlPy 라이브러리를 활용하기 위해 영단어 배제.
 - 힙합 vs 발라드의 영문 가사 비교 시각화
@@ -92,7 +96,7 @@
 
 
 
-3️⃣ 
+
 
 
 
@@ -123,7 +127,7 @@
 <td><a href = "https://github.com/Jiyoeng">
   <img src="https://user-images.githubusercontent.com/99390776/210307368-3f5886aa-e65e-4824-bff8-515466393ab1.png" width ='80%'/> </a> </td>
 <td><a href = "https://github.com/qualified-user">
-  <img src="https://user-images.githubusercontent.com/99390776/210307381-098cafcd-b96f-4b2c-b219-b178032f5ede.png" width ='80%'/> </a> </td>
+  <img src="https://user-images.githubusercontent.com/99390776/210324235-07eb64ba-baf5-4133-847a-80e89c8ee480.png" width ='60%'/> </a> </td>
 </table>
 
 <br>
