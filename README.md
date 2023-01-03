@@ -16,24 +16,6 @@
 멜론 발라드 장르 최신곡을 인기순으로 정렬하여 크롤링한 후, KoGPT2에 텍스트 생성 태스크를 할당하여 삼행시를 만들어주는 ai를 제작하였습니다.
 
 
-## ✅ 프로젝트 팀원
-
-
-![텍스트] 종현 (https://user-images.githubusercontent.com/99390776/210307034-97f2af95-de13-4d3a-b3d7-f9c4ca6f50d4.png)
-
-![텍스트] 지혜 (https://user-images.githubusercontent.com/99390776/210307070-7215a15f-dff4-4dc6-82a2-dfd50dd7b18c.png)
-
-![텍스트] 의준 (https://user-images.githubusercontent.com/99390776/210307359-b22d1e72-41d1-41a8-9ce0-9caae342805c.png)
-
-![텍스트] 자현 (https://user-images.githubusercontent.com/99390776/210307346-43055bce-4a30-442a-93a0-f770ceb5e914.png)
-
-![텍스트] 지영 (https://user-images.githubusercontent.com/99390776/210307368-3f5886aa-e65e-4824-bff8-515466393ab1.png)
-
-![텍스트] 소희 (https://user-images.githubusercontent.com/99390776/210307381-098cafcd-b96f-4b2c-b219-b178032f5ede.png)
-
-
-
-<br>
 
 ## ✅ Stack
 
@@ -68,7 +50,7 @@
 
 
 
-## ✅ EDA (Exploratory Data Analysis)
+## ✅ 데이터셋
 
 1️⃣ 텍스트 전처리
 
@@ -77,20 +59,59 @@
 - 공백이 2회 이상 반복될 경우에도 제거해주고, 전처리 후 빈 행이나 10자 이상 안 되는 행 또한 제거하였다.
 - 전처리 완료 후에는 인덱스를 초기화해주고, 개행 문자를 기준으로 리스트로 만들어 활용하거나 split하여 .txt 확장자 파일로 만들어 모델을 학습시켰다.
 
-2️⃣ 음악 장르별 EDA
+2️⃣ 음악 장르별 EDA (Exploratory Data Analysis)
 
-- 힙합, 댄스, RNB 장르는 영어의 비율이 높게 나타났다. → N행시를 위한 문장 생성 시 문맥의 통일성 저해 가능성 존재
+- 힙합, 댄스, RNB 장르는 영어의 비율이 높게 나타났다. → 토큰화 과정에서 KonlPy 라이브러리를 활용하기 위해 영단어 배제.
+- 힙합 vs 발라드의 영문 가사 비교 시각화
+- 댄스 vs 발라드의 영문 가사 비교 시각화
+
 - 인디는 장르 특성상 주제가 다양했다 → 주제가 다양한 만큼 문장 생성 시 맥락에 맞지 않는 구 혹은 문장이 생성될 위험 배제
-- 예스러운 말투와 MZ세대가 주로 사용하지 않는 어휘가 잦았고, 추임새가 많았다 →
+- 트로트 장르는 무의미한 추임새의 반복이 많았다 → 
+- 예시: 진진자라
+진진자라 지리지리자
+진진자라 지리지리자
+진진자라 지리지리자
+바람처럼 왔다가
+불꽃처럼 사랑하고
+구름처럼 흘러가는
+진진자라 지리지리자
+진진자라 지리지리자
+진진자라 지리지리자
+
+
+
+3️⃣ 
 
 
 
 
-3️⃣
+## ✅ 프로젝트 팀원
 
 
+<table>
+<tr>
+<th> 지혜 </th>
+<th> 종현 </th>
+<th> 의준 </th>
+<th> 자현 </th>
+<th> 지영 </th>
+<th> 소희 </th>
+  </tr>
+  
+  
+  
+<td><a href = "https://github.com/eveoreveline">
+  <img src="https://user-images.githubusercontent.com/99390776/210307070-7215a15f-dff4-4dc6-82a2-dfd50dd7b18c.png" width = '80%'/> </a> </td>
+<td><a href = "https://github.com/moonstar97">
+  <img src="https://user-images.githubusercontent.com/99390776/210307034-97f2af95-de13-4d3a-b3d7-f9c4ca6f50d4.png" width ='80%'/> </a> </td>
+<td><a href = "https://github.com/dk-davidekim">
+  <img src="https://user-images.githubusercontent.com/99390776/210307359-b22d1e72-41d1-41a8-9ce0-9caae342805c.png" width ='80%'/> </a> </td>
+<td><a href = "https://github.com/wumusill">
+  <img src="https://user-images.githubusercontent.com/99390776/210307346-43055bce-4a30-442a-93a0-f770ceb5e914.png" width ='80%'/> </a> </td>
+<td><a href = "https://github.com/Jiyoeng">
+  <img src="https://user-images.githubusercontent.com/99390776/210307368-3f5886aa-e65e-4824-bff8-515466393ab1.png" width ='80%'/> </a> </td>
+<td><a href = "https://github.com/qualified-user">
+  <img src="https://user-images.githubusercontent.com/99390776/210307381-098cafcd-b96f-4b2c-b219-b178032f5ede.png" width ='80%'/> </a> </td>
+</table>
 
-
-
-
-
+<br>
