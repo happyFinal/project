@@ -172,11 +172,7 @@ trainer = Trainer(
     training_args,
     train_dataset=tokenized_datasets,
     eval_dataset=tokenized_datasets,
-    tokenizer=tokenizer,
-
-		# Add callbacks, earlystopping
-		callbacks = [EarlyStoppingCallback(early_stopping_patience=1)]
-)
+    tokenizer=tokenizer)
 ```
 
 🔗 모델: https://github.com/happyFinal/project/tree/main/model
