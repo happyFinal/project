@@ -57,7 +57,25 @@
 
 1️⃣ 웹 크롤링
 
+- 중간중간 뜨는 에러 메세지는 웹페이지가 불러와지기 전에 html을 긁으려고 해서 발생하는 문제. → 곡 정보를 불러오는게 딜레이가 없어서 발생한 것으로 유추
 
+```time.sleep() 추가 (driver.implicitly_wait(10) 을 사용해도 에러 해결이 안됨)```
+
+```또는 WebDriverWait() 시간 추가```
+
+- driver.implicitly_wait(10) : 10초안에 웹페이지를 load 하면 바로 넘어가거나, 10초를 기다림
+
+```time.sleep(10) : 10초를 기다림```
+
+- 페이지 하단 인덱스(y)를 돌 때 XPATH 에서 첫번째 페이지 → 세 번째 페이지로 도는 오류 발견함
+
+```css selector로 변경해서 사용하여 해결(첫번째 인덱스 스킵하기 위해 y+1값 사용)```
+
+
+🔗 웹 크롤러: https://github.com/happyFinal/project/tree/main/crawling
+
+
+<br>
 
 2️⃣ 텍스트 전처리
 
@@ -65,6 +83,8 @@
 - 데이터에 한글, 숫자, 개행문자만을 남겼는데, 숫자를 남긴 이유는 '1번', '3일' 등의 단어를 한글 수사로 매핑하지 않고 바로 사용하기 위해서이다.
 - 공백이 2회 이상 반복될 경우에도 제거해주고, 전처리 후 빈 행이나 10자 이상 안 되는 행 또한 제거하였다.
 - 전처리 완료 후에는 인덱스를 초기화해주고, 개행 문자를 기준으로 리스트로 만들어 활용하거나 split하여 .txt 확장자 파일로 만들어 모델을 학습시켰다.
+
+<br>
 
 3️⃣ 음악 장르별 EDA (Exploratory Data Analysis)
 
@@ -97,6 +117,7 @@
 진진자라 지리지리자
 ```
 
+<br>
 <br>
 <br>
 
@@ -158,6 +179,7 @@ trainer = Trainer(
 
 🔗 모델: https://github.com/happyFinal/project/tree/main/model
 
+<br>
 <br>
 <br>
 
