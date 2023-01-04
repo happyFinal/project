@@ -9,11 +9,7 @@
 
 ## ✅ 프로젝트 개요
 
-멋쟁이 사자처럼 AI스쿨 부트캠프 7기의 수료과정 중 파이널 프로젝트로 시작하게 되었습니다.
-
-자연어 처리 분야에서 텍스트 데이터 전처리 및 생성 태스크의 이해도를 높이고, 허깅페이스의 모델 활용을 실습해보고자 해당 주제를 선택하였습니다.
-
-멜론 발라드 장르 최신곡을 인기순으로 정렬하여 크롤링한 후, KoGPT2에 텍스트 생성 태스크를 할당하여 삼행시를 만들어주는 ai를 제작하였습니다.
+멋쟁이 사자처럼 AI스쿨 부트캠프 7기의 수료과정 중 파이널 프로젝트로 시작하게 되었습니다. 자연어 처리 분야에서 텍스트 데이터 전처리 및 생성 태스크의 이해도를 높이고, 허깅페이스의 모델 활용을 실습해보고자 해당 주제를 선택하였습니다. 멜론 발라드 장르 최신곡을 인기순으로 정렬하여 크롤링한 후, KoGPT2에 텍스트 생성 태스크를 할당하여 삼행시를 만들어주는 ai를 제작하였습니다.
 
 
 
@@ -65,7 +61,7 @@
 
 3️⃣ 음악 장르별 EDA (Exploratory Data Analysis)
 
-- 힙합, 댄스, RNB 장르는 영어의 비율이 높게 나타났다. → 토큰화 과정에서 KonlPy 라이브러리를 활용하기 위해 영단어 배제.
+- 힙합, 댄스, RNB 장르는 영어의 비율이 높게 나타났다. → 토큰화 과정에서 KonlPy 라이브러리를 활용하기 위해 영문가사는 삭제.
 - 힙합 vs 발라드의 영문 가사 비교 시각화
 
 ![Screenshot 2023-01-03 at 5 26 41 PM](https://user-images.githubusercontent.com/99390776/210321953-e77a91d5-c7fd-4c1f-9101-72cb9feec09d.png)
@@ -94,10 +90,63 @@
 진진자라 지리지리자
 ```
 
+## ✅ 모델링
 
+1️⃣ 토크나이저 관련
 
+```python
+tokenizer = PreTrainedTokenizerFast.from_pretrained("skt/kogpt2-base-v2",
+                                                    bos_token='</s>', 
+																										eos_token='</s>', 
+																										unk_token='<unk>',
+                                                    pad_token='<pad>', 
+																										mask_token='<mask>')
 
+# removed_lines : 전처리된 가사 데이터, 개행 문자 기준 split
+tokenized_datasets = tokenizer(removed_lines, # 데이터 형태 아래 사진 첨부 
+                               return_tensors="pt", 
+                               padding="max_length", 
+                               max_length=42,
+                               truncation=True)
+```
 
+removed_lines : 개행 문자, 영어가 제거된 가사 리스트
+
+2️⃣ 학습 관련
+
+```python
+from transformers import TrainingArguments
+
+# Trainer가 학습, 평가에 사용할 모든 하이퍼 파라미터를 포함하는 클래스 정의
+# 학습된 모델이 저장될 디렉토리만 지정하고 나머지는 기본값 사용
+training_args = TrainingArguments(
+		# 모델 저장 경로
+    "/content/drive/MyDrive/Colab Notebooks/ballad_all_model",
+
+		# epoch 설정
+    num_train_epochs=10,      
+    logging_steps=100000,
+    warmup_steps=100000,
+    save_steps=100000,
+    eval_steps=100000)
+
+###########################################################################
+from transformers import EarlyStoppingCallback
+from transformers import Trainer
+
+trainer = Trainer(
+    model,
+    training_args,
+    train_dataset=tokenized_datasets,
+    eval_dataset=tokenized_datasets,
+    tokenizer=tokenizer,
+
+		# Add callbacks, earlystopping
+		callbacks = [EarlyStoppingCallback(early_stopping_patience=1)]
+)
+```
+
+🔗 모델: https://github.com/happyFinal/project/tree/main/model
 
 
 
