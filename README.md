@@ -15,12 +15,18 @@
 
 ## ✅ Stack
 
+#### 웹 크롤링
+
+<img src="https://img.shields.io/badge/Beautiful Soup4-00A98F?style=for-the-badge&logo=Python&logoColor=white"> <img src="https://img.shields.io/badge/Selenium-ECD53F?style=for-the-badge&logo=Python&logoColor=black">
+
+
 #### 데이터 전처리
 <img src="https://img.shields.io/badge/Numpy-013243?style=for-the-badge&logo=numpy&logoColor=white"> <img src="https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white"> 
 <img src="https://img.shields.io/badge/KonlPy-ED1C24?style=for-the-badge&logo=Python&logoColor=white"> 
 
 #### 데이터 시각화
 
+<img src="https://img.shields.io/badge/Seaborn-31A8FF?style=for-the-badge&logo=Python&logoColor=white"> <img src="https://img.shields.io/badge/Matplotlib-FF4F8B?style=for-the-badge&logo=Python&logoColor=white">
 
 
 #### 모델링
