@@ -143,6 +143,8 @@ tokenized_datasets = tokenizer(removed_lines, # 데이터 형태 아래 사진 �
 
 removed_lines : 개행 문자, 영어가 제거된 가사 리스트
 
+<br>
+
 2️⃣ 학습 관련
 
 ```python
