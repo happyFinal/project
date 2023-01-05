@@ -37,7 +37,7 @@
 
 #### 🔗 배포링크 1 - streamlit webapp: https://happyfinal-streamlit-main-cjyf11.streamlit.app/
 
-#### 🔗 배포링크 2 - huggingface: https://huggingface.co/spaces/dk-davidekim/happyFinal-Streamlit
+#### 🔗 배포링크 2 - huggingface: https://huggingface.co/spaces/moonstar97/AIS7_deploy_streamlit
 
 
 <br>
